@@ -2,15 +2,15 @@
 
 ## How do I install these formulae?
 
-`brew install m99coder/tap/<formula>`
+`brew install m99coder/tap/alacritty`
 
-Or `brew tap m99coder/tap` and then `brew install <formula>`.
+Or `brew tap m99coder/tap` and then `brew install alacritty`.
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "m99coder/tap"
-brew "<formula>"
+brew "alacritty"
 ```
 
 ## Documentation
