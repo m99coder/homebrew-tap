@@ -28,6 +28,11 @@ cask "alacritty" do
   fish_completion "#{appdir}/Alacritty.app/Contents/Resources/completions/alacritty.fish"
   zsh_completion "#{appdir}/Alacritty.app/Contents/Resources/completions/_alacritty"
 
+  postflight do
+    system "/usr/bin/xattr", "-drs", "com.apple.quarantine", "#{appdir}/Alacritty.app"
+    system "/usr/bin/codesign", "--force", "--deep", "-s", "-", "#{appdir}/Alacritty.app"
+  end
+
   zap trash: [
     "~/Library/Preferences/org.alacritty.plist",
     "~/Library/Saved Application State/org.alacritty.savedState",
